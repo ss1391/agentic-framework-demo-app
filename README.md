@@ -4,6 +4,7 @@ In this app, the code simply creates a python app that reads a csv file that 3 c
 
 ### app.py
 
+```
 from fastapi import FastAPI
 import pandas as pd
 
@@ -14,7 +15,7 @@ def read_csv():
     df = pd.read_csv('product_price.csv')
     df['date'] = pd.to_datetime(df['date'], unit='s').dt.strftime('%m/%d/%Y')
     return df.to_html(index=False, header=True)
-
+```
 
 ### product_price.csv
 
